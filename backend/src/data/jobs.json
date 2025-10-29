@@ -23,5 +23,25 @@
     "location": "Jawa Barat",
     "description": "mantap",
     "createdAt": "2025-10-29T03:01:45.641Z"
+  },
+  {
+    "id": 1761714210517,
+    "title": "Frontend Developer Intern",
+    "company": "PT Cakrawala Tech",
+    "location": "Surabaya",
+    "description": "Membantu tim frontend menggunakan React.",
+    "link": "https://cakrawala.example.com/apply/1",
+    "contact": "hr@cakrawala.example.com",
+    "createdAt": "2025-10-29T05:03:30.517Z"
+  },
+  {
+    "id": 1761739082064,
+    "title": "Fullstack Developer",
+    "company": "Gaming Company",
+    "location": "Sumedang",
+    "description": "Gaji gacor",
+    "link": "https://fllstckdev.com/apply",
+    "contact": "gamingcompany@gmail.com",
+    "createdAt": "2025-10-29T11:58:02.066Z"
   }
 ]

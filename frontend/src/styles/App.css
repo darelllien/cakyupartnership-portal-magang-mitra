@@ -1,6 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f9fafb;
+  background-color: #f4f6f9; /* lebih lembut dan profesional */
   margin: 0;
   padding: 0;
   color: #333;
@@ -18,7 +18,7 @@ body {
 }
 
 .header h1 {
-  color: #ff6b6b;
+  color: #002366; /* biru khas universitas */
   margin-bottom: 5px;
 }
 
@@ -67,19 +67,22 @@ textarea {
   gap: 10px;
 }
 
+/* === TOMBOL UTAMA === */
 .btn-primary {
-  background-color: #ff6b6b;
+  background-color: #002366; /* biru universitas */
   color: white;
   border: none;
   padding: 10px 14px;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #ff5252;
+  background-color: #0056b3; /* biru muda hover */
 }
 
+/* === TOMBOL SEKUNDER === */
 .btn-secondary {
   background-color: #e0e0e0;
   border: none;
@@ -88,6 +91,7 @@ textarea {
   cursor: pointer;
 }
 
+/* === FILTER BAR === */
 .filter-bar {
   display: flex;
   gap: 10px;
@@ -103,6 +107,7 @@ textarea {
   font-size: 1rem;
 }
 
+/* === KARTU PEKERJAAN === */
 .job-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -123,12 +128,12 @@ textarea {
 
 .job-card h3 {
   margin: 0 0 6px;
-  color: #333;
+  color: #002366; /* judul biru */
 }
 
 .company {
   font-weight: 600;
-  color: #ff6b6b;
+  color: #f4b400; /* aksen emas dari logo universitas */
   margin-bottom: 4px;
 }
 
@@ -155,28 +160,33 @@ textarea {
   margin-top: 8px;
 }
 
+/* === TOMBOL EDIT DAN DELETE === */
 .btn-edit {
-  background-color: #ffe082;
+  background-color: #f4b400; /* emas */
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .btn-delete {
-  background-color: #ff8a80;
+  background-color: #dc3545; /* merah profesional */
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
 .btn-edit:hover {
-  background-color: #ffca28;
+  background-color: #d19e00;
 }
 
 .btn-delete:hover {
-  background-color: #ff5252;
+  background-color: #c82333;
 }
 
 .empty {
