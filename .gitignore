@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build
+dist/
+build/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Mac / Windows files
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.vscode/
+.idea/

@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1761699910688,
+    "title": "Backend Developer Intern",
+    "company": "Cakrawala Corp",
+    "location": "Jakarta",
+    "description": "Magang sebagai Backend Developer.",
+    "createdAt": "2025-10-29T01:05:10.688Z"
+  },
+  {
+    "id": 1761700936241,
+    "title": "Content Creator",
+    "company": "Linn Company",
+    "location": "Cikarang Pusat",
+    "description": "Mampu bekerja dibawah tekanan, minimal produksi conten perhari 100",
+    "createdAt": "2025-10-29T01:22:16.241Z",
+    "updatedAt": "2025-10-29T01:23:03.486Z"
+  },
+  {
+    "id": 1761706905641,
+    "title": "Admin Sosial Media",
+    "company": "Ashiap Company",
+    "location": "Jawa Barat",
+    "description": "mantap",
+    "createdAt": "2025-10-29T03:01:45.641Z"
+  }
+]
