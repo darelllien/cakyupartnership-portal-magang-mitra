@@ -9,12 +9,10 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-// Root endpoint
 app.get("/", (_req: Request, res: Response) => {
   res.send("Welcome to the Job Portal API!");
 });
 
-// Gunakan route modular
 app.use("/api/auth", authRoutes);
 app.use("/api/jobs", jobRoutes);
 

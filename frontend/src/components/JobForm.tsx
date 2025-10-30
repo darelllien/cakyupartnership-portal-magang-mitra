@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axiosInstance from "../lib/axiosInstance";
 
 interface Job {
   id?: number;
   title: string;
   company: string;
   location: string;
-  description?: string; // ✅ sekarang opsional, agar tidak bentrok dengan App.tsx
+  description?: string;
   link?: string | null;
   contact?: string | null;
 }
@@ -50,9 +50,9 @@ const JobForm: React.FC<JobFormProps> = ({ job, onFormSubmit, onCancel }) => {
 
     try {
       if (job?.id) {
-        await axios.put(`http://localhost:5000/api/jobs/${job.id}`, newJob);
+        await axiosInstance.put(`/jobs/${job.id}`, newJob);
       } else {
-        await axios.post("http://localhost:5000/api/jobs", newJob);
+        await axiosInstance.post("/jobs", newJob);
       }
       onFormSubmit();
     } catch (error) {

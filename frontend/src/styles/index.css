@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Global Styles ===== */
 body {
   @apply bg-gray-50 text-gray-800 font-sans antialiased transition-colors duration-300;
 }
@@ -11,13 +10,11 @@ body {
   @apply max-w-6xl mx-auto py-10 px-5;
 }
 
-/* ===== Header ===== */
 header {
   @apply text-center mb-10;
 }
 
 header h1 {
-  /* Ubah gradasi ke biru universitas */
   @apply text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent mb-2;
 }
 
@@ -25,9 +22,7 @@ header p {
   @apply text-gray-600 text-base;
 }
 
-/* ===== Form Section ===== */
 .form-section {
-  /* Border halus biru */
   @apply bg-white p-6 rounded-2xl shadow-md shadow-blue-100/40 border border-blue-100 mb-10;
 }
 
@@ -49,9 +44,7 @@ textarea {
   @apply flex gap-3 mt-2;
 }
 
-/* ===== Buttons ===== */
 .btn-primary {
-  /* Gradasi biru ke emas */
   @apply bg-gradient-to-r from-blue-900 to-yellow-500 hover:from-blue-800 hover:to-yellow-400 
          text-white font-semibold px-5 py-2 rounded-xl transition-all duration-300 
          shadow-sm hover:shadow-md;
@@ -62,7 +55,6 @@ textarea {
          transition-all duration-300 border border-gray-200;
 }
 
-/* ===== Filter Bar ===== */
 .filter-bar {
   @apply flex flex-col md:flex-row gap-3 mb-8;
 }
@@ -73,7 +65,6 @@ textarea {
          focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all duration-200;
 }
 
-/* ===== Job List & Cards ===== */
 .job-list h2 {
   @apply text-xl font-semibold mb-4 text-gray-800;
 }
@@ -111,7 +102,6 @@ textarea {
   @apply flex justify-end gap-2 mt-3;
 }
 
-/* ===== Buttons (Edit / Delete) ===== */
 .btn-edit {
   @apply bg-yellow-100 hover:bg-yellow-200 text-gray-800 font-medium px-3 py-1 rounded-lg 
          transition duration-200 border border-yellow-300;
@@ -122,17 +112,14 @@ textarea {
          transition duration-200 border border-red-300;
 }
 
-/* ===== Empty State ===== */
 .empty {
   @apply text-center text-gray-500 italic mt-5;
 }
 
-/* ===== Input Reuse ===== */
 .input-style {
   @apply border border-gray-300 rounded-lg p-2 w-full focus:ring-2 focus:ring-blue-600 focus:outline-none;
 }
 
-/* ===== Layout Panels ===== */
 .content-container {
   @apply flex flex-col lg:flex-row gap-6;
 }

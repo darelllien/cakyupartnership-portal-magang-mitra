@@ -2,12 +2,31 @@ import { Request, Response } from "express";
 import { readJobs, writeJobs, validateUrl } from "../utils/fileUtils";
 import { Job } from "../models/jobModel";
 
-// GET semua job
 export const getAllJobs = (_req: Request, res: Response) => {
   res.json(readJobs());
 };
 
-// POST tambah job
+export const getJobsWithPagination = (req: Request, res: Response) => {
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+  const jobs = readJobs();
+
+  const totalJobs = jobs.length;
+  const totalPages = Math.ceil(totalJobs / limit);
+
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+
+  const paginatedJobs = jobs.slice(startIndex, endIndex);
+
+  res.json({
+    jobs: paginatedJobs,
+    currentPage: page,
+    totalPages,
+    totalJobs,
+  });
+};
+
 export const createJob = (req: Request, res: Response) => {
   const jobs = readJobs();
   const { title, company, location, description, link, contact } = req.body;
@@ -34,25 +53,22 @@ export const createJob = (req: Request, res: Response) => {
   res.status(201).json(newJob);
 };
 
-// PUT update job
-// PUT /api/jobs/:id
 export const updateJob = (req: Request, res: Response): void => {
   const id = Number(req.params.id);
   const jobs = readJobs();
   const index = jobs.findIndex((j) => j.id === id);
 
-  // Cek kalau job tidak ditemukan
   if (index === -1) {
     res.status(404).json({ message: "Job not found" });
     return;
   }
 
-  const old = jobs[index]!; // ✅ tanda seru (!) artinya "pasti tidak undefined"
+  const old = jobs[index]!;
 
   const { title, company, location, description, link, contact } = req.body;
 
   const updatedJob: Job = {
-    ...old, // tetap bawa id & createdAt
+    ...old,
     title: title ?? old.title,
     company: company ?? old.company,
     location: location ?? old.location,
@@ -67,7 +83,6 @@ export const updateJob = (req: Request, res: Response): void => {
   res.json(updatedJob);
 };
 
-// DELETE job
 export const deleteJob = (req: Request, res: Response) => {
   const id = Number(req.params.id);
   const jobs = readJobs();
