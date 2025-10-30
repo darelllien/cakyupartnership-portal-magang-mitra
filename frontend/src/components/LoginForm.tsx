@@ -22,25 +22,19 @@ export default function LoginForm({
         password,
       });
 
-      // ✅ Ambil token dan role dari response
       const { token, role } = res.data;
 
-      // ✅ Simpan ke localStorage agar bisa diakses oleh halaman lain
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
 
-      // ✅ Panggil callback untuk update state global (jika ada)
       onLogin({ username, role }, token);
 
-      // ✅ Arahkan ke dashboard sesuai role
       if (role === "admin") {
         navigate("/admin/dashboard");
       } else {
         navigate("/user/dashboard");
       }
 
-      // ✅ Paksa reload agar layout dan komponen lain langsung update
-      // (tanpa perlu refresh manual)
       window.location.reload();
     } catch (e: any) {
       console.error("Login error:", e);

@@ -12,7 +12,7 @@ interface HeaderProps {
 
 export default function Header({ user, handleLogout }: HeaderProps) {
   return (
-    <header className="bg-amber-600 text-white py-4 shadow-md">
+    <header className="bg-[#003A75] text-white py-4 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
         <Link to="/" className="text-2xl font-bold tracking-wide">
           💼 Partnership Cakrawala

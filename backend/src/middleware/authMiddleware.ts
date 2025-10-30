@@ -9,7 +9,6 @@ if (!JWT_SECRET) {
   throw new Error("❌ JWT_SECRET environment variable is missing");
 }
 
-// sub tetap string, biar sesuai definisi JwtPayload
 export interface AuthPayload extends JwtPayload {
   sub: string;
   username: string;
@@ -39,7 +38,6 @@ export const authenticate = (
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
 
-    // pastikan hasilnya object (bukan string)
     if (typeof decoded === "string") {
       return res.status(401).json({ message: "Invalid token format" });
     }

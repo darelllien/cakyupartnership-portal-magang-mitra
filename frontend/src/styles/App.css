@@ -1,6 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f4f6f9; /* lebih lembut dan profesional */
+  background-color: #f4f6f9;
   margin: 0;
   padding: 0;
   color: #333;
@@ -18,7 +18,7 @@ body {
 }
 
 .header h1 {
-  color: #002366; /* biru khas universitas */
+  color: #002366;
   margin-bottom: 5px;
 }
 
@@ -67,9 +67,8 @@ textarea {
   gap: 10px;
 }
 
-/* === TOMBOL UTAMA === */
 .btn-primary {
-  background-color: #002366; /* biru universitas */
+  background-color: #002366;
   color: white;
   border: none;
   padding: 10px 14px;
@@ -79,10 +78,9 @@ textarea {
 }
 
 .btn-primary:hover {
-  background-color: #0056b3; /* biru muda hover */
+  background-color: #0056b3;
 }
 
-/* === TOMBOL SEKUNDER === */
 .btn-secondary {
   background-color: #e0e0e0;
   border: none;
@@ -91,7 +89,6 @@ textarea {
   cursor: pointer;
 }
 
-/* === FILTER BAR === */
 .filter-bar {
   display: flex;
   gap: 10px;
@@ -107,7 +104,6 @@ textarea {
   font-size: 1rem;
 }
 
-/* === KARTU PEKERJAAN === */
 .job-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -128,12 +124,12 @@ textarea {
 
 .job-card h3 {
   margin: 0 0 6px;
-  color: #002366; /* judul biru */
+  color: #002366;
 }
 
 .company {
   font-weight: 600;
-  color: #f4b400; /* aksen emas dari logo universitas */
+  color: #f4b400;
   margin-bottom: 4px;
 }
 
@@ -160,9 +156,8 @@ textarea {
   margin-top: 8px;
 }
 
-/* === TOMBOL EDIT DAN DELETE === */
 .btn-edit {
-  background-color: #f4b400; /* emas */
+  background-color: #f4b400;
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
@@ -172,7 +167,7 @@ textarea {
 }
 
 .btn-delete {
-  background-color: #dc3545; /* merah profesional */
+  background-color: #dc3545;
   border: none;
   padding: 6px 10px;
   border-radius: 6px;

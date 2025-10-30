@@ -47,7 +47,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-50">
-      <h1 className="text-3xl font-bold text-amber-600 mb-6">Login Portal</h1>
+      <h1 className="text-3xl font-bold text-[#0074FF] mb-6">Login Portal</h1>
 
       <form
         onSubmit={handleLogin}
@@ -82,8 +82,8 @@ export default function LoginPage() {
           disabled={loading}
           className={`w-full py-2 rounded text-white transition ${
             loading
-              ? "bg-amber-400 cursor-not-allowed"
-              : "bg-amber-600 hover:bg-amber-700"
+              ? "bg-[#66AFFF] cursor-not-allowed"
+              : "bg-[#0074FF] hover:bg-[#005FCC]"
           }`}
         >
           {loading ? "Memproses..." : "Login"}

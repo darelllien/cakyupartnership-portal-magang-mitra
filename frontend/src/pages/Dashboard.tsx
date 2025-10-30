@@ -5,6 +5,7 @@ import JobForm from "../components/JobForm";
 import JobList from "../components/JobList";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 
 interface Job {
   id: number;
@@ -33,6 +34,8 @@ export default function DashboardPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const jobsPerPage = 10;
+
+  const [showAddModal, setShowAddModal] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -124,26 +127,25 @@ export default function DashboardPage() {
           locations={uniqueLocations}
         />
 
-        <div className="flex flex-col lg:flex-row gap-8 mt-8">
-          {user?.role === "admin" && (
-            <div className="lg:w-1/3">
-              <JobForm
-                job={editingJob || undefined}
-                onFormSubmit={handleFormSubmit}
-                onCancel={() => setEditingJob(null)}
-              />
-            </div>
-          )}
-
-          <div className={user?.role === "admin" ? "lg:w-2/3" : "w-full"}>
-            <JobList
-              jobs={filteredJobs}
-              userRole={user?.role || "user"}
-              onEdit={user?.role === "admin" ? setEditingJob : undefined}
-              onDelete={user?.role === "admin" ? handleDelete : undefined}
-              grid={true}
-            />
+        {user?.role === "admin" && (
+          <div className="mb-4 flex justify-end">
+            <button
+              onClick={() => setShowAddModal(true)}
+              className="bg-[#0074FF] text-white px-4 py-2 rounded-md hover:bg-[#005FCC] shadow"
+            >
+              + Tambah Lowongan
+            </button>
           </div>
+        )}
+
+        <div className="w-full">
+          <JobList
+            jobs={filteredJobs}
+            userRole={user?.role || "user"}
+            onEdit={user?.role === "admin" ? setEditingJob : undefined}
+            onDelete={user?.role === "admin" ? handleDelete : undefined}
+            grid={true}
+          />
         </div>
 
         <div className="flex justify-center gap-2 mt-6">
@@ -153,7 +155,7 @@ export default function DashboardPage() {
               onClick={() => setCurrentPage(i + 1)}
               className={`px-4 py-2 rounded-md ${
                 currentPage === i + 1
-                  ? "bg-amber-600 text-white"
+                  ? "bg-[#0074FF] text-white"
                   : "bg-gray-200 hover:bg-gray-300"
               }`}
             >
@@ -164,6 +166,36 @@ export default function DashboardPage() {
       </main>
 
       <Footer />
+
+      {showAddModal && (
+        <Modal onClose={() => setShowAddModal(false)}>
+          <h2 className="text-xl font-bold mb-4 text-[#0074FF]">
+            Tambah Lowongan
+          </h2>
+
+          <JobForm
+            onFormSubmit={() => {
+              handleFormSubmit();
+              setShowAddModal(false);
+            }}
+            onCancel={() => setShowAddModal(false)}
+          />
+        </Modal>
+      )}
+
+      {editingJob && (
+        <Modal onClose={() => setEditingJob(null)}>
+          <h2 className="text-xl font-bold mb-4 text-[#0074FF]">
+            Edit Lowongan
+          </h2>
+
+          <JobForm
+            job={editingJob}
+            onFormSubmit={handleFormSubmit}
+            onCancel={() => setEditingJob(null)}
+          />
+        </Modal>
+      )}
     </div>
   );
 }
